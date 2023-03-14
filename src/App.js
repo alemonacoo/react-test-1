@@ -24,11 +24,21 @@ const App = () => {
     },
   ]);
 
+  // Delete Task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+    console.log("delete", id);
+  };
+
   return (
     <div className="container">
       <Header title="Hello From HEADER" />
       {/* <Header />  HEADER DI DEFAULT SENZA PROPS*/}
-      <Tasks tasks={tasks} />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        "No Tasks to show"
+      )}
     </div>
   );
 };
