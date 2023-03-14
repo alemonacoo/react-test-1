@@ -42,7 +42,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <Header title="Hello From HEADER" />
+      <Header title="Task Manager - React Test 1" />
       {/* <Header />  HEADER DI DEFAULT SENZA PROPS*/}
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
